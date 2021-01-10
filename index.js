@@ -57,7 +57,7 @@ const questions = [
 // Writing to a file 
 function writeToFile(fileName, data) {
 
-fs.writeFile("./demo/"+fileName, data, function(err) {
+fs.writeFile("./"+fileName, data, function(err) {
   if (err) {
     return console.log(err);
   }
@@ -71,7 +71,7 @@ fs.writeFile("./demo/"+fileName, data, function(err) {
 function init() {
   inquirer.prompt(questions)
   .then(function(data) {
-    writeToFile("DemoREADME.md", generatorMarkdown(data));
+    writeToFile("README.md", generatorMarkdown(data));
   })
 }
 
